@@ -1,6 +1,6 @@
 {
   "name": "@obsidians/bsc-sdk",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "BSC SDK",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "GPL-3.0",
@@ -12,9 +12,9 @@
   ],
   "scripts": {},
   "dependencies": {
-    "@obsidians/ipc": "^0.1.2",
-    "@obsidians/platform": "^0.1.0",
-    "@obsidians/redux": "^0.1.0",
+    "@obsidians/ipc": "^0.3.0",
+    "@obsidians/platform": "^0.3.0",
+    "@obsidians/redux": "^0.3.0",
     "ethers": "^5.0.31",
     "url-parse": "^1.4.7"
   },
@@ -24,7 +24,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-function-bind": "^7.7.4",
     "@babel/preset-env": "^7.7.5",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "^10.1.0",
     "cross-env": "^6.0.3"
   },
   "peerDependencies": {

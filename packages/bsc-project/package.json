@@ -1,6 +1,6 @@
 {
   "name": "@obsidians/bsc-project",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "BSC project",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "GPL-3.0",
@@ -10,7 +10,7 @@
   ],
   "scripts": {},
   "dependencies": {
-    "@obsidians/filetree": "^0.1.1"
+    "@obsidians/filetree": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -18,7 +18,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-function-bind": "^7.7.4",
     "@babel/preset-env": "^7.7.5",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "^10.1.0",
     "cross-env": "^6.0.3"
   }
 }

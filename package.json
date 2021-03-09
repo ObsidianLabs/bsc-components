@@ -6,13 +6,10 @@
     "build": "node init.js"
   },
   "dependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^5.0.0"
   },
   "resolutions": {
     "node-sass/node-gyp": "^5.0.2"
-  },
-  "devDependencies": {
-    "lerna": "^3.20.2"
   },
   "workspaces": [
     "packages/*",
