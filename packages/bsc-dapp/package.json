@@ -1,0 +1,33 @@
+{
+  "name": "@obsidians/bsc-dapp",
+  "version": "0.3.0",
+  "description": "BSC dApp",
+  "author": "Phil <qft.gtr@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ObsidianLabs/bsc-components.git",
+    "directory": "packages/react-dom"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "ethers": "^5.0.31",
+    "qs": "^6.9.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-external-helpers": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-function-bind": "^7.7.4",
+    "@babel/preset-env": "^7.7.5",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^6.0.3"
+  },
+  "peerDependencies": {
+    "ethers": "^5.0.30"
+  }
+}
