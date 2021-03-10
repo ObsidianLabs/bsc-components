@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ObsidianLabs/bsc-components.git",
-    "directory": "packages/react-dom"
+    "directory": "packages/bsc-dapp"
   },
   "main": "src/index.js",
   "files": [
