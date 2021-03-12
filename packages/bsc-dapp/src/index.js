@@ -99,4 +99,8 @@ export default class BscDapp {
   async signTypedData (typedData) {
     return this.isBrowserExtensionInstalled && await this.browserExtension.signTypedData(typedData)
   }
+
+  async sendTransaction (transactionParameters) {
+    return this.isBrowserExtensionInstalled && await this.browserExtension.sendTransaction(transactionParameters)
+  }
 }
