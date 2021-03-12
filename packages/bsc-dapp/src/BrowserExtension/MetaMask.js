@@ -86,4 +86,11 @@ export default class MetaMask {
       from: this.currentAccount.address,
     })
   }
+
+  async sendTransaction (txParams) {
+    return await this.ethereum.request({
+      method: 'eth_sendTransaction',
+      params: [txParams],
+    })
+  }
 }

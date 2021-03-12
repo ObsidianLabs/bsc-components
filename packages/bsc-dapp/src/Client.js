@@ -21,6 +21,10 @@ export default class Client {
       list: result.result,
     }
   }
+
+  parseEther(ether) {
+    return ethers.utils.parseEther(ether)
+  }
 }
 
 
@@ -40,7 +44,7 @@ class Explorer {
       offset: size,
       sort: 'desc'
     }
-    
+
     const res = await fetch(`${this.url}?${qs.stringify(query)}`)
     const result = await res.json()
     return result
