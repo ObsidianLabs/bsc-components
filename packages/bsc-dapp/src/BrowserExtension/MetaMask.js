@@ -87,10 +87,10 @@ export default class MetaMask {
     })
   }
 
-  async sendTransaction (transactionParameters) {
+  async sendTransaction (txParams) {
     return await this.ethereum.request({
       method: 'eth_sendTransaction',
-      params: [transactionParameters],
+      params: [txParams],
     })
   }
 }

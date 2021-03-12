@@ -100,7 +100,11 @@ export default class BscDapp {
     return this.isBrowserExtensionInstalled && await this.browserExtension.signTypedData(typedData)
   }
 
-  async sendTransaction (transactionParameters) {
-    return this.isBrowserExtensionInstalled && await this.browserExtension.sendTransaction(transactionParameters)
+  async transfer (txParams) {
+    return this.isBrowserExtensionInstalled && await this.browserExtension.sendTransaction(txParams)
+  }
+
+  parseEther(ether) {
+    return this._client.parseEther(ether)
   }
 }
