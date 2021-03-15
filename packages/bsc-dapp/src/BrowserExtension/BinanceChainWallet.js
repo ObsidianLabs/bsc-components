@@ -82,10 +82,10 @@ export default class MetaMask {
     throw new Error('signTypedData is not supported for Binance Chain Wallet.')
   }
 
-  async sendTransaction (txParams) {
+  async sendTransaction (tx) {
     return await this.bcWallet.request({
       method: 'eth_sendTransaction',
-      params: [txParams],
+      params: [tx],
     })
   }
 }

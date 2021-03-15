@@ -14,6 +14,12 @@ export default class Client {
     return { balance, codeHash }
   }
 
+  async executeContract ({ address, abi }, method, parameters = [], overrides = {}) {
+    const contract = new ethers.Contract(address, abi, this.provider)
+    const tx = await contract.populateTransaction[method](...parameters, overrides)
+    return tx
+  }
+
   async getTransactions (address, page, size) {
     const result = await this.explorer.getHistory(address, page, size)
     return {
@@ -22,14 +28,7 @@ export default class Client {
     }
   }
 
-  async createTransacction(address, abi, payload) {
-    const { method, parameters = [], overrides = {} } = payload
-    const contract = new ethers.Contract(address, abi, this.provider)
-    const tx = await contract.populateTransaction[method](...parameters, overrides)
-    return tx
-  }
-
-  parseEther(ether) {
+  parseEther (ether) {
     return ethers.utils.parseEther(ether)
   }
 }
