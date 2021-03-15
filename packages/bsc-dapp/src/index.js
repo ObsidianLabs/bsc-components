@@ -104,6 +104,10 @@ export default class BscDapp {
     return this.isBrowserExtensionInstalled && await this.browserExtension.sendTransaction(txParams)
   }
 
+  async createTransacction(address, abi, payload) {
+    return this._client.createTransacction(address, abi, payload)
+  }
+
   parseEther(ether) {
     return this._client.parseEther(ether)
   }
