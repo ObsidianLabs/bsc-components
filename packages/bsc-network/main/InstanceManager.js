@@ -38,9 +38,18 @@ class InstanceManager extends IpcChannel {
 
   async list (networkId = 'dev') {
     const { logs: volumes } = await this.exec(`docker volume ls --format "{{json . }}"`)
+    const { logs: runnings } = await this.exec(`docker ps --format "{{json . }}"`)
     const instances = volumes.split('\n').filter(Boolean).map(JSON.parse).filter(x => x.Name.startsWith(`${process.env.PROJECT}-`))
+    const runningInstances = runnings.split('\n').filter(Boolean).map(JSON.parse).map(x => {
+      if (x.Names.startsWith(`${process.env.PROJECT}-`)) {
+        return x.Mounts
+      }
+    }).filter(Boolean)
     const instancesWithLabels = instances.map(i => {
       const labels = {}
+      if (runningInstances.indexOf(i.Name) > -1) {
+        i.running = true
+      }
       i.Labels.split(',').forEach(x => {
         const [name, value] = x.split('=')
         labels[name] = value
