@@ -9,7 +9,20 @@ export default class Contract {
   }
 
   async query (method, { array }) {
-    return await this.instance.functions[method](...array)
+    const result = await this.instance.functions[method](...array)
+    const methodAbi = this.abi.find(item => item.name === method)
+    const outputs = methodAbi && methodAbi.outputs
+    const parsedOutputs = outputs.map(({ name, type }, index) => {
+      let value = result[index]
+      if (type.startsWith('uint') || type.startsWith('int')) {
+        value = value.toString()
+      }
+      return [name || `(param${index})`, { type, value }]
+    })
+    if (parsedOutputs.length === 1) {
+      return parsedOutputs[0][1]
+    }
+    return Object.fromEntries(parsedOutputs)
   }
 
   async execute (method, { array }, override) {
@@ -18,8 +31,12 @@ export default class Contract {
     return await voidSigner.populateTransaction(tx)
   }
 
-  async getLogs (event) {
-    const logs = await this.instance.queryFilter(event.name)
+  get maxGap () {
+    return 1000
+  }
+
+  async getLogs (event, { from, to }) {
+    const logs = await this.instance.queryFilter(event.name, from, to)
     return logs
   }
 }

@@ -46,6 +46,11 @@ export default class Sdk {
     return await this.provider.getBlock('latest')
   }
 
+  async latest () {
+    const status = await this.getStatus()
+    return status.number
+  }
+  
   async accountFrom (address) {
     const account = await this.client.getAccount(address)
     return {
@@ -74,8 +79,12 @@ export default class Sdk {
   }
 
   async estimate (tx) {
+    const gasPrice = await this.callRpc('eth_gasPrice')
     const result = await this.provider.estimateGas(tx)
-    return { gasLimit: result.toString() }
+    return {
+      gasLimit: result.toString(),
+      gasPrice: BigInt(gasPrice).toString(10),
+    }
   }
 
   sendTransaction (tx) {

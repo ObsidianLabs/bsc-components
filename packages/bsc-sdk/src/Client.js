@@ -17,9 +17,10 @@ export default class Client {
 
   async getTransactions (address, page, size) {
     const result = await this.explorer.getHistory(address, page, size)
+    const json = JSON.parse(result)
     return {
       length: 0,
-      list: result.result,
+      list: json.result,
     }
   }
 }
@@ -28,10 +29,10 @@ export default class Client {
 class ExplorerProxy {
   constructor (url) {
     this.url = url
-    this.channel = new IpcChannel('bsc-explorer')
   }
 
   async getHistory (address, page = 0, size = 10) {
+    const ipc = new IpcChannel()
     const query = {
       module: 'account',
       action: 'txlist',
@@ -42,6 +43,6 @@ class ExplorerProxy {
       offset: size,
       sort: 'desc'
     }
-    return await this.channel.invoke('GET', this.url, query)
+    return await ipc.invoke('fetch', this.url, query)
   }
 }

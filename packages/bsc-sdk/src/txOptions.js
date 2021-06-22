@@ -14,8 +14,8 @@ export default {
       className: 'col-6',
       label: 'Gas Price',
       icon: 'fas fa-dollar-sign',
-      placeholder: 'Default: 1 wei',
-      default: 1
+      placeholder: 'Default: 10 Gwei',
+      default: 10000000000
     }
   ]
 }
