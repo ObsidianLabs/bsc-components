@@ -57,7 +57,7 @@ export default class Sdk {
       address,
       balance: utils.unit.fromValue(account.balance),
       txCount: BigInt(account.txCount).toString(10),
-      codeHash: account.codeHash,
+      codeHash: account.codeHash === '0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470' ? null : account.codeHash,
     }
   }
 
@@ -140,5 +140,13 @@ export default class Sdk {
 
   async getTransactions (address, page = 0, size = 10) {
     return await this.client.getTransactions(address, page, size)
+  }
+
+  async tokenInfo (address) {
+    return
+  }
+
+  async getTokens (address) {
+    return
   }
 }
