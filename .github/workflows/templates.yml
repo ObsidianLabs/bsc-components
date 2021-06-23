@@ -1,0 +1,35 @@
+name: Update templates
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'packages/bsc-project/main/templates/**'
+      - '.github/workflows/templates.yml'
+
+  workflow_dispatch:
+
+env:
+  bucket: webideuserdata
+  region: cn-northwest-1
+  source: ./packages/eth-project/main/templates/
+  destination: templates/eth/
+
+jobs:
+  templates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks
+        env:
+          AWS_S3_BUCKET: ${{ env.bucket }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: '${{ env.region }}'
+          SOURCE_DIR: '${{ env.source }}'
+          DEST_DIR: '${{ env.destination }}'
