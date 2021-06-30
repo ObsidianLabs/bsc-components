@@ -9,6 +9,11 @@ export default {
         return state.set(payload.codeHash, Map(payload))
       }
     },
+    ABI_UPDATE: {
+      reducer: (state, { payload }) => {
+        return state.update(payload.codeHash, () => Map(payload))
+      }
+    },
     ABI_DELETE: {
       reducer: (state, { payload }) => state.remove(payload)
     },
