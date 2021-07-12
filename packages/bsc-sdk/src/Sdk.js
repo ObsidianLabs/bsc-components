@@ -1,6 +1,9 @@
 import { ethers } from 'ethers'
 
+import networks from './networks'
+import kp from './kp'
 import utils from './utils'
+import txOptions from './txOptions'
 import Client from './Client'
 import rpc from './rpc'
 import Contract from './Contract'
@@ -18,12 +21,20 @@ export default class Sdk {
     this.explorer = explorer
   }
 
+  static get kp () { return kp }
+  static get networks () { return networks }
+
   // static InitBrowserExtension (networkManager) {
   //   if (window.ethereum && window.ethereum.isMetaMask) {
   //     browserExtension = new BrowserExtension(networkManager, window.ethereum)
   //     return browserExtension
   //   }
   // }
+
+  get utils () { return utils }
+  get txOptions () { return txOptions }
+  get rpc () { return rpc }
+  get namedContracts () { return {} }
 
   get provider () {
     return this.client.provider

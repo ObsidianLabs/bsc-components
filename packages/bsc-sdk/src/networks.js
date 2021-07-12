@@ -2,8 +2,8 @@ import platform from '@obsidians/platform'
 
 const networks = [
   {
-    id: 'testnet',
-    group: 'testnet',
+    id: 'bsc-testnet',
+    group: 'binance smart network',
     name: 'BSC Testnet',
     fullName: 'BSC Testnet',
     icon: 'fas fa-vial',
@@ -11,10 +11,11 @@ const networks = [
     url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
     chainId: 0x61,
     explorer: 'https://api-testnet.bscscan.com/api',
+    symbol: 'BNB',
   },
   {
-    id: 'mainnet',
-    group: 'mainnet',
+    id: 'bsc-mainnet',
+    group: 'binance smart network',
     name: 'BSC Mainnet',
     fullName: 'BSC Mainnet',
     icon: 'fas fa-globe',
@@ -22,6 +23,7 @@ const networks = [
     url: 'https://bsc-dataseed.binance.org',
     chainId: 0x38,
     explorer: 'https://api.bscscan.com/api',
+    symbol: 'BNB',
   }
 ]
 

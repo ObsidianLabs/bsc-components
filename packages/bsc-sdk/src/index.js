@@ -8,4 +8,3 @@ export { default as signatureProvider } from './signatureProvider'
 export { default as redux } from './redux'
 export { default as networks } from './networks'
 export { default as txOptions } from './txOptions'
-export const namedContracts = {}
