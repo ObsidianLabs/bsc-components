@@ -28,7 +28,8 @@
     "cross-env": "^6.0.3"
   },
   "peerDependencies": {
-    "ethers": "^5.0.30",
-    "immutable": "^4.0.0-rc.12"
+    "@obsidians/eth-sdk": "*",
+    "ethers": "*",
+    "immutable": "*"
   }
 }

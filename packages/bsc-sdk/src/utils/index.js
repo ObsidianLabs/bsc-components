@@ -1,4 +1,6 @@
 import { ethers } from 'ethers'
+import { utils } from '@obsidians/eth-sdk'
+import txOptions from "./txOptions"
 
 const display = value => {
   const amount = ethers.utils.formatEther(value)
@@ -13,18 +15,7 @@ const display = value => {
 }
 
 export default {
-  sign: {
-    sha3: ethers.utils.keccak256
-  },
-  format: {
-    bytes: str => ethers.utils.toUtf8Bytes(str),
-    bytesFromHex: hex => ethers.utils.arrayify(hex),
-  },
-  unit: {
-    fromValue: ethers.utils.formatEther,
-    toValue: ethers.utils.parseEther,
-    valueToGvalue: v => ethers.utils.formatUnits(v, 'gwei')
-  },
+  ...utils,
+  txOptions,
   display,
-  decodeError: () => '',
 }

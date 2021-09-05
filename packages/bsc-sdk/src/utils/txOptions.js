@@ -7,7 +7,7 @@ export default {
       label: 'Gas Limit',
       icon: 'fas fa-burn',
       placeholder: 'Default: 1,000,000',
-      default: 1000000
+      default: '1000000'
     },
     {
       name: 'gasPrice',
@@ -15,7 +15,7 @@ export default {
       label: 'Gas Price',
       icon: 'fas fa-dollar-sign',
       placeholder: 'Default: 10 Gwei',
-      default: 10000000000
+      default: '10000000000'
     }
   ]
 }

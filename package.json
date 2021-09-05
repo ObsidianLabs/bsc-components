@@ -13,6 +13,7 @@
   },
   "workspaces": [
     "packages/*",
-    "../electron-components/packages/*"
+    "../electron-components/packages/*",
+    "../eth-components/packages/*"
   ]
 }

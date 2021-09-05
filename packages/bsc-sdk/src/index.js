@@ -1,10 +1,25 @@
-export { default } from './Sdk'
+import {
+  makeSdk,
+  kp,
+  EthersClient,
+  EthersContract,
+  EthTxManager,
+  rpc,
+} from '@obsidians/eth-sdk'
 
-export { default as rpc } from './rpc'
-export { default as utils } from './utils'
-export { default as kp } from './kp'
-export { default as signatureProvider } from './signatureProvider'
+import networks from './networks'
 
-export { default as redux } from './redux'
-export { default as networks } from './networks'
-export { default as txOptions } from './txOptions'
+// import BrowserExtension from './BrowserExtension'
+
+import utils from './utils'
+
+export default makeSdk({
+  kp,
+  networks,
+  Client: EthersClient,
+  Contract: EthersContract,
+  TxManager: EthTxManager,
+  BrowserExtension: undefined,
+  utils,
+  rpc,
+})

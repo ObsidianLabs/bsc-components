@@ -1,8 +1,8 @@
 {
   "main": "./contracts/BEP20.sol",
   "deploy": "./build/contracts/BEP20Token.json",
+  "framework": "#framework",
   "compilers": {
-    "#compiler_name": "#compiler_version",
     "solc": "0.5.17"
   }
 }
