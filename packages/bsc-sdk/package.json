@@ -12,11 +12,9 @@
   ],
   "scripts": {},
   "dependencies": {
+    "@obsidians/eth-sdk": "^0.3.0",
     "@obsidians/ipc": "^0.3.0",
-    "@obsidians/platform": "^0.3.0",
-    "@obsidians/redux": "^0.3.0",
-    "ethers": "^5.0.31",
-    "url-parse": "^1.4.7"
+    "@obsidians/platform": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -26,10 +24,5 @@
     "@babel/preset-env": "^7.7.5",
     "babel-eslint": "^10.1.0",
     "cross-env": "^6.0.3"
-  },
-  "peerDependencies": {
-    "@obsidians/eth-sdk": "*",
-    "ethers": "*",
-    "immutable": "*"
   }
 }
