@@ -2,14 +2,14 @@
   "name": "@obsidians/bsc-components",
   "license": "GPL-3.0",
   "private": true,
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "build": "node init.js"
   },
   "dependencies": {
-    "node-sass": "^5.0.0"
-  },
-  "resolutions": {
-    "node-sass/node-gyp": "^5.0.2"
+    "node-sass": "^6.0.0"
   },
   "workspaces": [
     "packages/*",
