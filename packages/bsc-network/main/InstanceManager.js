@@ -14,8 +14,8 @@ class InstanceManager extends IpcChannel {
   async create ({ name, version, networkId = 'dev', miner }) {
     const PROJECT = process.env.PROJECT
     const tmpdir = os.tmpdir()
-    const keysFile = path.join(tmpdir, 'keys')
-    const pwdFile = path.join(tmpdir, 'pwd')
+    // const keysFile = path.join(tmpdir, 'keys')
+    // const pwdFile = path.join(tmpdir, 'pwd')
 
     await this.exec(`docker volume create --label version=${version},chain=${networkId} ${PROJECT}-${name}`)
     await this.exec(`docker run -di --rm --name ${PROJECT}-config-${name} -v ${PROJECT}-${name}:/data --entrypoint /bin/sh ${process.env.DOCKER_IMAGE_NODE}:${version}`)
@@ -25,13 +25,13 @@ class InstanceManager extends IpcChannel {
 
     // fs.writeFileSync(keysFile, miner.secret.replace('0x', ''))
     // fs.writeFileSync(pwdFile, 'password')
-    await this.exec(`docker cp ${keysFile} ${PROJECT}-config-${name}:/data`)
-    await this.exec(`docker cp ${pwdFile} ${PROJECT}-config-${name}:/data`)
+    // await this.exec(`docker cp ${keysFile} ${PROJECT}-config-${name}:/data`)
+    // await this.exec(`docker cp ${pwdFile} ${PROJECT}-config-${name}:/data`)
     // fs.unlinkSync(keysFile)
     // fs.unlinkSync(pwdFile)
 
-    // await this.exec(`docker exec ${PROJECT}-config-${name} geth --datadir=/data account import /data/keys --password /data/pwd`)
-    await this.exec(`docker exec ${PROJECT}-config-${name} geth --datadir=/data init /data/genesis.json`)
+    // await this.exec(`docker exec ${PROJECT}-config-${name} geth --datadir /data --nousb account import /data/keys --password /data/pwd`)
+    await this.exec(`docker exec ${PROJECT}-config-${name} geth --datadir /data init /data/genesis.json`)
 
     await this.exec(`docker stop ${PROJECT}-config-${name}`)
   }
