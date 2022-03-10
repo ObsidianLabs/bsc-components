@@ -1,7 +1,7 @@
 {
   "name": "@obsidians/bsc-network",
   "version": "0.3.0",
-  "description": "BSC network",
+  "description": "BNB network",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "GPL-3.0",
   "main": "main/index.js",
