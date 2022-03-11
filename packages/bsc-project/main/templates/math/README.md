@@ -1,3 +1,3 @@
-# BSC-Contracts
+# BNB-Contracts
 
-From [https://github.com/mathwallet/BSC-Contracts](https://github.com/mathwallet/BSC-Contracts)
+From [https://github.com/mathwallet/BNB-Contracts](https://github.com/mathwallet/BNB-Contracts)

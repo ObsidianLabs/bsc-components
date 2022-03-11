@@ -1,7 +1,7 @@
 {
   "name": "@obsidians/bsc-sdk",
   "version": "0.3.0",
-  "description": "BSC SDK",
+  "description": "BNB SDK",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "GPL-3.0",
   "browser": "src/index.js",

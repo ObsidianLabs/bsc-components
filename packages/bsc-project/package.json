@@ -1,7 +1,7 @@
 {
   "name": "@obsidians/bsc-project",
   "version": "0.3.0",
-  "description": "BSC project",
+  "description": "BNB project",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "GPL-3.0",
   "main": "main/index.js",
