@@ -13,6 +13,10 @@ import networks from './networks'
 
 import utils from './utils'
 
+export {
+  utils,
+}
+
 export default makeSdk({
   kp,
   networks,
